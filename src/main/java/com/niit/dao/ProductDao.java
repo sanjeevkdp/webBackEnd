@@ -6,6 +6,8 @@ import com.niit.model.Product;
 
 public interface ProductDao {
 	void saveOrUpdate(Product product);
+	
+	void editProduct(Product product);
 
 	void delete(String id);
 

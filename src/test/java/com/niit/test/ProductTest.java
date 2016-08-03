@@ -22,8 +22,7 @@ public class ProductTest {
 		product.setOut_of_stock(false);
 		product.setCategory_id("CAT004");
 		product.setSupplier_id("21");
-		product.setImageUrl("image2.jpg");
-
+		
 		productDao.saveOrUpdate(product);
 
 }

@@ -1,10 +1,14 @@
 package com.niit.model;
 
+import java.util.UUID;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table
@@ -18,8 +22,9 @@ public class Product {
 	private int quantity;
 	private boolean out_of_stock;
 	private String category_id;
-	private String imageUrl;
 	private String supplier_id;
+	@Transient
+	private MultipartFile imgUrl;
 	public String getProduct_id() {
 		return product_id;
 	}
@@ -62,17 +67,20 @@ public class Product {
 	public void setCategory_id(String category_id) {
 		this.category_id = category_id;
 	}
-	public String getImageUrl() {
-		return imageUrl;
-	}
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
 	public String getSupplier_id() {
 		return supplier_id;
 	}
 	public void setSupplier_id(String supplier_id) {
 		this.supplier_id = supplier_id;
+	}
+	public MultipartFile getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(MultipartFile imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+	public Product() {
+		this.product_id = "PRO"+UUID.randomUUID().toString().substring(27).toUpperCase();
 	}
 	
 

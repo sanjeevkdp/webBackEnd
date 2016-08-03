@@ -28,6 +28,12 @@ public class ProductDaoImpl implements ProductDao {
 		}
 
 	@Transactional
+		public void editProduct(Product product) {
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
+
+		}
+
+	@Transactional
 		public void delete(String id) {
 		Product proToDelete = new Product();
 			proToDelete.setProduct_id(id);
