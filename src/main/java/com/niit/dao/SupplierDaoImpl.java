@@ -28,6 +28,12 @@ public class SupplierDaoImpl implements SupplierDao{
 		}
 
 	@Transactional
+	public void editSupplier(Supplier supplier) {
+		sessionFactory.getCurrentSession().saveOrUpdate(supplier);
+
+	}
+
+	@Transactional
 		public void delete(String id) {
 			Supplier supToDelete = new Supplier();
 			supToDelete.setSupplier_id(id);

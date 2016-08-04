@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,6 +19,7 @@ import com.sun.mail.handlers.multipart_mixed;
 public class Category {
 	@Id
 	private String category_id;
+//   @NotEmpty(message="the CAtegory name not be empty")
 	private String category_name;
 	private String description;
 	@Transient 

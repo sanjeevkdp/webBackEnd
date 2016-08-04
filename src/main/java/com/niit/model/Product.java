@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,9 +18,12 @@ import org.springframework.web.multipart.MultipartFile;
 public class Product {
 	@Id
 	private String product_id;
+	@NotEmpty(message="Product name not be empty")
 	private String product_name;
+	@Min(value=500, message="price Should not less then 500")
 	private double unit_price;
 	private String description;
+	@Min(value=0, message="product Quantity should not be less then zero")
 	private int quantity;
 	private boolean out_of_stock;
 	private String category_id;

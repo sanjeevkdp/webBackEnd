@@ -6,6 +6,8 @@ import com.niit.model.Supplier;
 
 public interface SupplierDao {
 	void saveOrUpdate(Supplier supplier);
+	
+	void editSupplier(Supplier supplier);
 
 	void delete(String id);
 
