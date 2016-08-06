@@ -16,7 +16,7 @@ package com.niit.dao;
 	public class CartDaoImpl  implements CartDao{
 
 		@Autowired
-			private SessionFactory sessionFactory;
+		private SessionFactory sessionFactory;
 
 		public CartDaoImpl(SessionFactory sessionFactory) {
 				this.sessionFactory = sessionFactory;

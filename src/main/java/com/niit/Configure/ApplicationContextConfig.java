@@ -1,3 +1,4 @@
+
 package com.niit.Configure;
 
 import java.util.Properties;
@@ -19,13 +20,17 @@ import com.niit.model.Product;
 import com.niit.model.Supplier;
 import com.niit.model.UserDetails;
 import com.niit.model.UserLogin;
+import com.niit.model.users;
+
+
 
 @Configuration
 @ComponentScan("com.niit")
+
 @EnableTransactionManagement
 public class ApplicationContextConfig {
 
-	
+
 	@Bean(name="dataSource")
 	public DataSource getH2DataSource(){
 		DriverManagerDataSource dataSource=  new DriverManagerDataSource();
@@ -52,6 +57,7 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
 		sessionBuilder.addAnnotatedClass(UserLogin.class);
+		sessionBuilder.addAnnotatedClass(users.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		return sessionBuilder.buildSessionFactory();
 		
@@ -62,5 +68,14 @@ public class ApplicationContextConfig {
 		HibernateTransactionManager transactionManager =new HibernateTransactionManager(sessionFactory);		
 		return transactionManager;
 	}
+	
+	
+//	@Bean
+//	public MultipartResolver multipartResolver() {
+//	    org.springframework.web.multipart.commons.CommonsMultipartResolver multipartResolver = new org.springframework.web.multipart.commons.CommonsMultipartResolver();
+//	    multipartResolver.setMaxUploadSize(1024000);
+//	    return multipartResolver;
+//	}
+//	
 	
 }
