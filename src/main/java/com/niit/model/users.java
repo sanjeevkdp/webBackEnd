@@ -32,5 +32,10 @@ public Boolean getEnabled() {
 public void setEnabled(Boolean enabled) {
 	this.enabled = enabled;
 }
+@Override
+public String toString() {
+	return "users [user_id=" + user_id + ", username=" + username + ", password=" + password + ", enabled=" + enabled
+			+ "]";
+}
 
 }

@@ -7,11 +7,22 @@ import com.niit.model.Cart;
 public interface CartDao {
 	void saveOrUpdate(Cart cart);
 
-	void delete(String id);
-
 	Cart get(String id);
 
 	public List<Cart> list();
+	
+   Cart create(Cart cart);
+	
+	Cart read(String cart_id);
+	
+	void delete(String cart_id);
+
+	void update(String cart_id, Cart cart);
+	
+	
+
+	
+
 
 
 

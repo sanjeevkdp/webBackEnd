@@ -18,7 +18,7 @@ public class loginConfigure extends WebSecurityConfigurerAdapter {
 	@Autowired
 	DataSource dataSource;
 	
-
+    @Autowired
 	public void cofigureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 		authenticationManagerBuilder
 		.jdbcAuthentication().dataSource(dataSource)				
@@ -35,8 +35,8 @@ public class loginConfigure extends WebSecurityConfigurerAdapter {
 			.access("hasRole('ROLE_USER')")
 			.and()
 				.formLogin()
-				.loginPage("/login").loginProcessingUrl("/j_spring_security_check")
-				
+				.loginPage("/login")
+				.loginProcessingUrl("/j_spring_security_check")
 				.failureUrl("/login?error")
 				.usernameParameter("username")
 				.passwordParameter("password")				
