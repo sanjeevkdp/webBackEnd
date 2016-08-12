@@ -19,8 +19,9 @@ import com.sun.mail.handlers.multipart_mixed;
 public class Category {
 	@Id
 	private String category_id;
-//   @NotEmpty(message="the CAtegory name not be empty")
+    @NotEmpty(message="Category name not be empty")
 	private String category_name;
+    @NotEmpty(message="Description should be somthing")
 	private String description;
 	@Transient 
 	private MultipartFile imgUrl;

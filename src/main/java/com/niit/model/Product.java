@@ -18,12 +18,13 @@ import org.springframework.web.multipart.MultipartFile;
 public class Product {
 	@Id
 	private String product_id;
-	@NotEmpty(message="Product name not be empty")
+	@NotEmpty(message=" * Product name not be empty")
 	private String product_name;
-	@Min(value=500, message="price Should not less then 500")
+	@Min(value=500, message=" * Price should not less then 500")
 	private double unit_price;
+	@NotEmpty(message=" * Description should not be empty ")
 	private String description;
-	@Min(value=0, message="product Quantity should not be less then zero")
+	@Min(value=0, message=" * Product quantity should not be less then zero")
 	private int quantity;
 	private boolean out_of_stock;
 	private String category_id;

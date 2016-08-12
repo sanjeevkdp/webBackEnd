@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,9 +17,13 @@ import org.springframework.web.multipart.MultipartFile;
 public class Supplier {
 	@Id
 	private String supplier_id;
+	@NotEmpty(message="Supplier name not be empty")
 	private String supplier_name;
+	@NotEmpty(message="Supplier email not be empty")
 	private String supplier_email;
+	@NotEmpty(message="Supplier contact not be empty")
 	private String supplier_contact;
+	@NotEmpty(message="Supplier address not be empty")
 	private String supplier_address;
 	private String supplier_imgUrl;
 	@Transient

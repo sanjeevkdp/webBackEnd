@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.model.Cart;
 import com.niit.model.CartItem;
 import com.niit.model.Category;
+import com.niit.model.Customer;
 import com.niit.model.Product;
 import com.niit.model.Supplier;
 import com.niit.model.UserDetails;
@@ -58,11 +59,11 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
-	//	sessionBuilder.addAnnotatedClass(Cart.class);
-	//  sessionBuilder.addAnnotatedClass(CartItem.class);
-	//  sessionBuilder.addAnnotatedClass(UserDetails.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
+	    sessionBuilder.addAnnotatedClass(CartItem.class);
+	    sessionBuilder.addAnnotatedClass(UserDetails.class);
 	//  sessionBuilder.addAnnotatedClass(UserLogin.class);
-	//  sessionBuilder.addAnnotatedClass(users.class);
+	    sessionBuilder.addAnnotatedClass(Customer.class);
 				
 		return sessionBuilder.buildSessionFactory();
 		
