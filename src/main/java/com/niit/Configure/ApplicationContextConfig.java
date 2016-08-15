@@ -24,7 +24,7 @@ import com.niit.model.Product;
 import com.niit.model.ShippingAddress;
 import com.niit.model.Supplier;
 import com.niit.model.UserLogin;
-import com.niit.model.users;
+import com.niit.model.Users;
 
 
 
@@ -67,6 +67,7 @@ public class ApplicationContextConfig {
 	    //  sessionBuilder.addAnnotatedClass(UserDetails.class);
 	//  sessionBuilder.addAnnotatedClass(UserLogin.class);
 	    sessionBuilder.addAnnotatedClass(Customer.class);
+	    sessionBuilder.addAnnotatedClass(Users.class);
 				
 		return sessionBuilder.buildSessionFactory();
 		

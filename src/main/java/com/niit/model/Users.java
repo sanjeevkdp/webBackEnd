@@ -11,11 +11,12 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table
 @Component
-public class users {
+public class Users {
 	@Id
 	private String user_id;
 	private String username;
 	private String password;
+	
 	private Boolean enabled;
 	private String customerId;
 
@@ -42,6 +43,14 @@ public class users {
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
 
 	public String getCustomerId() {
 		return customerId;
@@ -52,7 +61,7 @@ public class users {
 	}
 
 	
-	public users(){
+	public Users(){
 		this.user_id="USR"+UUID.randomUUID().toString().substring(30).toUpperCase();
 	}
 }
