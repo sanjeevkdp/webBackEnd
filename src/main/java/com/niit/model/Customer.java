@@ -1,5 +1,4 @@
 package com.niit.model;
-
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -13,12 +12,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Customer {
 	@Id
-private String customerId;
-	
+    private String customerId;
+	private String customer_name;
+	private String emailAddress;
 	private String phoneNo;
 	private String gender;
 	private String password;
 	private String userName;
+	private boolean enabled;
 	public String getCustomerId() {
 		return customerId;
 	}
@@ -51,5 +52,25 @@ private String customerId;
 	}
 	public Customer(){
 		this.customerId="CUST"+UUID.randomUUID().toString().substring(27).toUpperCase();
+	}
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+	
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	public String getCustomer_name() {
+		return customer_name;
+	}
+	public void setCustomer_name(String customer_name) {
+		this.customer_name = customer_name;
 	}
 }

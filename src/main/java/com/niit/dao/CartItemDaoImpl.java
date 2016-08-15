@@ -34,14 +34,14 @@ public class CartItemDaoImpl implements CartItemDao {
 	public void delete(String cartItem_id) {
 		CartItem cartItemToDelete = new CartItem();
 		cartItemToDelete.setCartItem_id(cartItem_id);
-		sessionFactory.getCurrentSession().delete(cartItem_id);
+		sessionFactory.getCurrentSession().delete(cartItemToDelete);
 
 	}
 
 	@Transactional
 	public CartItem get(String cartItem_id) {
 		// sessionFactory.getCurrentSession().get(CartItem.class, cartItem_id);
-		String hql = "from Cart where cartItem_id=" + "'" + cartItem_id + "'";
+		String hql = "from CartItem where cartItem_id=" + "'" + cartItem_id + "'";
 		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
 		List<CartItem> listCartItem = (List<CartItem>) query.getResultList();
 		if (listCartItem != null && !listCartItem.isEmpty()) {

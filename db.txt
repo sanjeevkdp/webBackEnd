@@ -1,0 +1,159 @@
+
+
+
+<................................................supplier...................................>
+create table SUPPLIER ( 
+supplier_ID VARchar (20),
+supplier_NAME VARchar(20) NOt null,
+supplier_EMAIL VARCHAR(30)not null,
+supplier_CONTACT VARCHAR(10),
+supplier_ADDRESS VARCHAR(225),
+supplier_imgurl varchar(225),
+constraint pk_supplier_supplier_id primary key(supplier_id)
+);
+
+
+
+
+
+
+
+
+
+<...............................................category...................................>
+create table category(
+category_id varchar(20),
+category_name varchar(20),
+imageUrl VARchar (50),
+description varhchar,
+constraint pk_category_category_id primary key(category_id)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+<...................................................product table................................>
+
+create table product(
+product_id varchar(20),
+product_name varchar(20),
+description varchar(225),
+unit_price decimal(10,2),
+quantity int,
+out_of_stock boolean,
+category_id varchar(20),
+supplier_id varchar(20),
+imageUrl varchar(225),
+constraint pk_product_product_id primary key(product_id),
+constraint fk_product_category_id foreign key(category_id) references category(category_id) on delete set null,
+constraint fk_product_supplier_id foreign key(supplier_id) references supplier(supplier_id) on delete set null
+);
+
+
+<.................................................userDetailse.....................................>
+create table userDetails(
+user_id varchar,
+user_name varchar,
+user_email varchar,
+user_contact number(10),
+user_imageurl varchar,
+user_password varchar,
+user_gender varchar,
+user_address varchar,
+constraint pk_userDetails_user_id primary key(user_id)
+);
+
+<..................................................userRole.........................................>
+create table userRole(
+user_id varchar,
+authority varchar,
+constraint pk_userRole_user_id primary key(user_id)
+);
+  
+<.................................................userLogin........................................>
+create table useLogin(
+user_id varchar,
+user_name varchar,
+user_password varchar unique,
+user_enabled boolean,
+constraint pk_userLogin_user_id primary key(user_id)
+);
+<................................................customerTable.......................................>
+create table customer(
+customerId varchar(20),
+phoneNo varchar(10) not null,
+gender varchar(10) not null,
+password varchar(100) not null,
+userName varchar(100) not null,
+constraint pk_customer_customerId primary key(customerId));
+<.................................................cart.............................................>
+
+
+create table cart(
+cart_id varchar(20),
+customerId varchar(20),
+grandTotal decimal(10),
+noOfproduct decimal(3),
+constraint pk_cart_cart_id primary key (cart_id),
+constraint fk_cart_userName foreign key (customerId) references customer(customerId)on delete cascade
+);
+<............................................cartItem................................................>
+create table cartItem(
+cartItem_id varchar(20),
+product_id varchar(20),
+customerId varchar(20),
+cart_id varchar(20),
+quantity decimal(10),
+totalPrice decimal(20,2),
+constraint pk_cartItem_cartItem_id primary key (cartItem_id),
+constraint fk_cartItem_product_id foreign key (product_id) references product(product_id)on delete set null,
+constraint fk_cartItem_userName foreign key (customerId) references customer(customerId)on delete cascade,
+constraint fk_cartItem_cart_id foreign key (cart_id) references cart(cart_id)on delete cascade
+);
+
+
+<...........................................shippingAddress.............................................>
+create table ShippingAddress(
+    shippingAddress_id varchar,
+    streetName varchar,
+    apartmentNumber varchar,
+     city varchar,
+     state varchar,
+    country varchar,
+     zipCode varchar,
+     constraint pk_ShippingAddress_shippingAddress_id primary key (shippingAddress_id),
+);
+<..........................................billing Address...............................................>
+
+create table BillingAddress(
+    billingAddress_id varchar,
+    streetName varchar,
+    apartmentNumber varchar,
+     city varchar,
+     state varchar,
+    country varchar,
+     zipCode varchar,
+     constraint pk_BillingAddress_billingAddress_id primary key (billingAddress_id),
+);
+
+
+<..........................................customerSomeModification.........................................>
+create table customer(
+customerId varchar,
+customer_name varchar,
+phoneNo varchar ,
+gender varchar ,
+emailAddress varchar,
+password varchar ,
+userName varchar ,
+enable boolean,
+constraint pk_customer_customerId primary key(customerId),
+);

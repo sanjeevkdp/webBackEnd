@@ -7,24 +7,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
+
 @Entity
 @Table
 @Component
-public class ShippingAddress {
-	@Id
-	private String shippingAddress_id;
-	private String streetName;
+public class BillingAddress {
+    @Id
+    private String billingAddress_id;
+    private String streetName;
     private String apartmentNumber;
     private String city;
     private String state;
     private String country;
     private String zipCode;
-  
-	public String getShippingAddress_id() {
-		return shippingAddress_id;
+   
+	
+	public String getBillingAddress_id() {
+		return billingAddress_id;
 	}
-	public void setShippingAddress_id(String shippingAddress_id) {
-		this.shippingAddress_id = shippingAddress_id;
+	public void setBillingAddress_id(String billingAddress_id) {
+		this.billingAddress_id = billingAddress_id;
 	}
 	public String getStreetName() {
 		return streetName;
@@ -63,9 +65,8 @@ public class ShippingAddress {
 		this.zipCode = zipCode;
 	}
 	
-	
-    public ShippingAddress(){
-    	this.shippingAddress_id="SHAD"+UUID.randomUUID().toString().substring(27).toUpperCase();
-    }
+	public BillingAddress(){
+		this.billingAddress_id="BLAS"+UUID.randomUUID().toString().substring(27).toUpperCase();
+	}
 
 }
