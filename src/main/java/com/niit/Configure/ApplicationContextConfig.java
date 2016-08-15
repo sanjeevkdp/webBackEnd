@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.model.Authorities;
 import com.niit.model.BillingAddress;
 import com.niit.model.Cart;
 import com.niit.model.CartItem;
@@ -68,6 +69,7 @@ public class ApplicationContextConfig {
 	//  sessionBuilder.addAnnotatedClass(UserLogin.class);
 	    sessionBuilder.addAnnotatedClass(Customer.class);
 	    sessionBuilder.addAnnotatedClass(Users.class);
+	    sessionBuilder.addAnnotatedClass(Authorities.class);
 				
 		return sessionBuilder.buildSessionFactory();
 		
