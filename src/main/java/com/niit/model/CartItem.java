@@ -20,15 +20,15 @@ public class CartItem {
 	private String product_id;
 	private  int quantity;
 	private double totalPrice;
-	@Transient
-	Product product;
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
+//	@Transient
+//	Product product;
+//	public Product getProduct() {
+//		return product;
+//	}
+//
+//	public void setProduct(Product product) {
+//		this.product = product;
+//	}
 	public String getCart_id() {
 		return cart_id;
 	}

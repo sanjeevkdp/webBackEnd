@@ -21,6 +21,11 @@ public class CartItemDaoImpl implements CartItemDao {
 	}
 
 	@Transactional
+	public void persist(CartItem cartItem){
+		sessionFactory.getCurrentSession().persist(cartItem);
+	}
+	
+	@Transactional
 	public void saveOrUpdate(CartItem cartItem) {
 		sessionFactory.getCurrentSession().saveOrUpdate(cartItem);
 	}
@@ -52,16 +57,15 @@ public class CartItemDaoImpl implements CartItemDao {
 
 	@Transactional
 	public List<CartItem> list() {
-		@SuppressWarnings("unchecked")
-		List<CartItem> listCartItem = (List<CartItem>) sessionFactory.getCurrentSession().createCriteria(CartItem.class)
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-
-		return listCartItem;
+		String hql = "from CartItem";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<CartItem> cartItems = query.getResultList();
+		return cartItems;
 
 	}
 	@Transactional
 	public List<CartItem> getCartItemsByCustomerId(String customerId) {
-		String hql = "from CartItem where customerId=" + "'" + customerId + "'";
+		String hql = "from CartItem where customerId='" + customerId + "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<CartItem> listOfCartItems = query.getResultList();
 		return listOfCartItems;

@@ -154,6 +154,38 @@ gender varchar ,
 emailAddress varchar,
 password varchar ,
 userName varchar ,
-enable boolean,
+enabled boolean,
 constraint pk_customer_customerId primary key(customerId),
 );
+
+
+
+<..................................................updated.........................................>
+create table users(
+user_id varchar not null primary key,
+username varchar not null ,
+password varchar not null,
+enabled boolean not null
+);
+
+create table authorities(
+authorities_id varchar not null primary key,
+username varchar not null,
+authority varchar not null,
+constraint fk_authorities_username foreign key (username) references users(username)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

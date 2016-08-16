@@ -46,11 +46,10 @@ public  class CartDaoImpl implements CartDao{
  }
  @Transactional
  public List<Cart> list(){
-	 @SuppressWarnings("unchecked")
-		List<Cart> listCart = (List<Cart>) sessionFactory.getCurrentSession()
-		.createCriteria(Cart.class).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		
-	return listCart;
+	 String hql = "from Cart";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Cart> listOfCarts = query.getResultList();
+		return listOfCarts;
 	 
  }
  @Transactional
