@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Category;
+import com.niit.model.Product;
 
 @Repository("categoryDao")
 public class CategoryDaoImpl implements CategoryDao{
@@ -63,5 +64,15 @@ public class CategoryDaoImpl implements CategoryDao{
 			return listcategory;
 		}
 
-
+	@Transactional
+	public List<Product> ProductListByCategory(String id)
+	{
+		String hql="from Product where category_id=" + "'" + id + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Product> listSelectedProducts = query.getResultList();
+		return listSelectedProducts; 
+		
+	
+	}
+	
 }

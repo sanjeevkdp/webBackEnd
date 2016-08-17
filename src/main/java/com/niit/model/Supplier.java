@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +23,8 @@ public class Supplier {
 	private String supplier_name;
 	@NotEmpty(message="Supplier email not be empty")
 	private String supplier_email;
-	@NotEmpty(message="Supplier contact not be empty")
+	@NotBlank(message="Supplier contact not be empty")
+	@Size(min=10,max=10)
 	private String supplier_contact;
 	@NotEmpty(message="Supplier address not be empty")
 	private String supplier_address;

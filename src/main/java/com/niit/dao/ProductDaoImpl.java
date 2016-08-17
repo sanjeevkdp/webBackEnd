@@ -61,4 +61,16 @@ public class ProductDaoImpl implements ProductDao {
 			.createCriteria(Product.class).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 			return listProduct;
 		}
+	@Transactional
+	public List<Product> similarProducts(String product_id) {
+		Product product = get(product_id);
+			
+		String hql = "from Product where product_id!=" + "'" + product_id + "'" + "and" + " category_id=" + "'"
+				+ product.getCategory_id() + "'" + "and supplier_id!=" + "'" + product.getSupplier_id() + "'"+"and out_of_stock=" + "'" + false + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Product> similarProductList = query.getResultList();
+		return similarProductList;
+
+	}
+
 }

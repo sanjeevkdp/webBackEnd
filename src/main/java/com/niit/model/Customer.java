@@ -4,7 +4,10 @@ import java.util.UUID;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -13,11 +16,18 @@ import org.springframework.stereotype.Component;
 public class Customer {
 	@Id
     private String customerId;
+	@NotBlank(message="name should not be empty")
 	private String customer_name;
+	@Pattern(regexp=".+@.+\\..+", message="Please provide a valid email address")
 	private String emailAddress;
+	@NotBlank(message="phone number should not be empty")
+	@Pattern(regexp="(^$|[0-9]{10})")
 	private String phoneNo;
+	@NotBlank
 	private String gender;
+	@NotBlank(message="password should not be empty")
 	private String password;
+	@NotBlank(message="userName should not be empty")
 	private String userName;
 	private boolean enabled;
 	public String getCustomerId() {

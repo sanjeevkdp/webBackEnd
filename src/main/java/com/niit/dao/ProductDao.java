@@ -15,5 +15,5 @@ public interface ProductDao {
 
 	public List<Product> list();
 	
-
+	List<Product> similarProducts(String product_id);
 }
