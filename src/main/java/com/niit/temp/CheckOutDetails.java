@@ -7,7 +7,7 @@ import com.niit.model.Card;
 import com.niit.model.Cart;
 import com.niit.model.CartItem;
 import com.niit.model.Customer;
-import com.niit.model.Order;
+import com.niit.model.OrderD;
 import com.niit.model.OrderItems;
 import com.niit.model.ShippingAddress;
 
@@ -19,7 +19,7 @@ public class CheckOutDetails implements Serializable{
 	private Card card;
 	private ShippingAddress shippingAddress;
 	private BillingAddress billingAddress;
-	private Order order;
+	private OrderD order;
 	private OrderItems orderItems;
 	private Cart cart;
 	private CartItem cartItem;
@@ -42,10 +42,10 @@ public class CheckOutDetails implements Serializable{
 	public void setBillingAddress(BillingAddress billingAddress) {
 		this.billingAddress = billingAddress;
 	}
-	public Order getOrder() {
+	public OrderD getOrder() {
 		return order;
 	}
-	public void setOrder(Order order) {
+	public void setOrder(OrderD order) {
 		this.order = order;
 	}
 	public OrderItems getOrderItems() {

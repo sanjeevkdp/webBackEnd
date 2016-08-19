@@ -9,9 +9,9 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 @Entity
-@Table
+@Table(name="orderd")
 @Component
-public class Order implements Serializable {
+public class OrderD implements Serializable {
 	/**
 	 * 
 	 */
@@ -56,7 +56,7 @@ public class Order implements Serializable {
 		this.billingAddress_id = billingAddress_id;
 	}
 
-	public Order(){
+	public OrderD(){
 		this.order_id="ODR"+UUID.randomUUID().toString().substring(30).toUpperCase();
 	}
 }
