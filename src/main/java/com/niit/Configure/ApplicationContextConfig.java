@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.model.Authorities;
 import com.niit.model.BillingAddress;
+import com.niit.model.Card;
 import com.niit.model.Cart;
 import com.niit.model.CartItem;
 import com.niit.model.Category;
@@ -24,7 +25,6 @@ import com.niit.model.Customer;
 import com.niit.model.Product;
 import com.niit.model.ShippingAddress;
 import com.niit.model.Supplier;
-import com.niit.model.UserLogin;
 import com.niit.model.Users;
 
 
@@ -66,7 +66,7 @@ public class ApplicationContextConfig {
 	    sessionBuilder.addAnnotatedClass(ShippingAddress.class);
 	    sessionBuilder.addAnnotatedClass(BillingAddress.class);
 	    //  sessionBuilder.addAnnotatedClass(UserDetails.class);
-	//  sessionBuilder.addAnnotatedClass(UserLogin.class);
+	    sessionBuilder.addAnnotatedClass(Card.class);
 	    sessionBuilder.addAnnotatedClass(Customer.class);
 	    sessionBuilder.addAnnotatedClass(Users.class);
 	    sessionBuilder.addAnnotatedClass(Authorities.class);

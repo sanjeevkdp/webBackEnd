@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class BillingAddress {
     @Id
     private String billingAddress_id;
+    private String customerId;
     private String streetName;
     private String apartmentNumber;
     private String city;
@@ -22,6 +23,12 @@ public class BillingAddress {
     private String zipCode;
    
 	
+	public String getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
 	public String getBillingAddress_id() {
 		return billingAddress_id;
 	}

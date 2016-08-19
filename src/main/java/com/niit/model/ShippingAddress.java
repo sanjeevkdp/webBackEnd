@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 @Entity
 @Table
@@ -13,13 +14,26 @@ import org.springframework.stereotype.Component;
 public class ShippingAddress {
 	@Id
 	private String shippingAddress_id;
+	private String customerId;
+	@NotBlank
 	private String streetName;
-    private String apartmentNumber;
+	@NotBlank
+	private String apartmentNumber;
+	@NotBlank
     private String city;
+	@NotBlank
     private String state;
+	@NotBlank
     private String country;
+	@NotBlank
     private String zipCode;
   
+	public String getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
 	public String getShippingAddress_id() {
 		return shippingAddress_id;
 	}
