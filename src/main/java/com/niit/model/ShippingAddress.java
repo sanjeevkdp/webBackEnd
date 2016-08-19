@@ -1,5 +1,6 @@
 package com.niit.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -11,7 +12,11 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table
 @Component
-public class ShippingAddress {
+public class ShippingAddress implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private String shippingAddress_id;
 	private String customerId;

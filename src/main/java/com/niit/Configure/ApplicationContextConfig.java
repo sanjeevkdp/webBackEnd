@@ -22,6 +22,8 @@ import com.niit.model.Cart;
 import com.niit.model.CartItem;
 import com.niit.model.Category;
 import com.niit.model.Customer;
+import com.niit.model.Order;
+import com.niit.model.OrderItems;
 import com.niit.model.Product;
 import com.niit.model.ShippingAddress;
 import com.niit.model.Supplier;
@@ -65,11 +67,13 @@ public class ApplicationContextConfig {
 	    sessionBuilder.addAnnotatedClass(CartItem.class);
 	    sessionBuilder.addAnnotatedClass(ShippingAddress.class);
 	    sessionBuilder.addAnnotatedClass(BillingAddress.class);
-	    //  sessionBuilder.addAnnotatedClass(UserDetails.class);
+	    sessionBuilder.addAnnotatedClass(Order.class);
+	    sessionBuilder.addAnnotatedClass(OrderItems.class);
 	    sessionBuilder.addAnnotatedClass(Card.class);
 	    sessionBuilder.addAnnotatedClass(Customer.class);
 	    sessionBuilder.addAnnotatedClass(Users.class);
 	    sessionBuilder.addAnnotatedClass(Authorities.class);
+	    
 				
 		return sessionBuilder.buildSessionFactory();
 		

@@ -1,5 +1,6 @@
 package com.niit.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -8,7 +9,12 @@ import javax.persistence.Id;
 import org.springframework.stereotype.Component;
 @Entity
 @Component
-public class CartItem {
+public class CartItem implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	private String cartItemId;

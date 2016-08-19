@@ -1,5 +1,6 @@
 package com.niit.model;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -15,7 +16,11 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 @Table
 @Component
-public class Product {
+public class Product implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private String product_id;
 	@NotEmpty(message=" * Product name not be empty")
