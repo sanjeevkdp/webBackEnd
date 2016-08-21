@@ -72,5 +72,14 @@ public class ProductDaoImpl implements ProductDao {
 		return similarProductList;
 
 	}
+	@Transactional
+	public List<Product> productItems(String keyword){
+		
+		String hql = "from Product p where lower(p.product_name) like lower('%" + keyword + "%') and out_of_stock="
+				+ "'" + false + "'";
+        Query query=sessionFactory.getCurrentSession().createQuery(hql);
+        List<Product> listOfProduct = query.getResultList();
+		return listOfProduct;
+	}
 
 }

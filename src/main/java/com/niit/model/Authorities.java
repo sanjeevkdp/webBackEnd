@@ -21,6 +21,7 @@ public class Authorities implements Serializable{
 	private String authorities_id;
 	private String userName;
 	private String authority;
+	private String customerId;
 	public String getAuthorities_id() {
 		return authorities_id;
 	}
@@ -42,6 +43,12 @@ public class Authorities implements Serializable{
    public Authorities(){
 	   this.authorities_id="AUT"+UUID.randomUUID().toString().substring(30).toUpperCase();
    }
+public String getCustomerId() {
+	return customerId;
+}
+public void setCustomerId(String customerId) {
+	this.customerId = customerId;
+}
 	
 	
 }

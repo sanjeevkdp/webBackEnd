@@ -13,7 +13,9 @@ public interface ProductDao {
 
 	Product get(String id);
 
-	public List<Product> list();
+	List<Product> list();
 	
 	List<Product> similarProducts(String product_id);
+    
+	List<Product> productItems(String keyword);
 }

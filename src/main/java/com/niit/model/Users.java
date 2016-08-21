@@ -21,7 +21,7 @@ public class Users implements Serializable{
 	private String user_id;
 	private String userName;
 	private String password;
-	
+	private String customerId;
 	private Boolean enabled;
 	//private String customerId;
 
@@ -63,5 +63,13 @@ public class Users implements Serializable{
 	
 	public Users(){
 		this.user_id="USR"+UUID.randomUUID().toString().substring(30).toUpperCase();
+	}
+
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
 	}
 }

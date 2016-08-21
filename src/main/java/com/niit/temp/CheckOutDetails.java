@@ -19,7 +19,7 @@ public class CheckOutDetails implements Serializable{
 	private Card card;
 	private ShippingAddress shippingAddress;
 	private BillingAddress billingAddress;
-	private OrderD order;
+	private OrderD orderd;
 	private OrderItems orderItems;
 	private Cart cart;
 	private CartItem cartItem;
@@ -42,11 +42,11 @@ public class CheckOutDetails implements Serializable{
 	public void setBillingAddress(BillingAddress billingAddress) {
 		this.billingAddress = billingAddress;
 	}
-	public OrderD getOrder() {
-		return order;
+	public OrderD getOrderd() {
+		return orderd;
 	}
-	public void setOrder(OrderD order) {
-		this.order = order;
+	public void setOrderd(OrderD order) {
+		this.orderd = orderd;
 	}
 	public OrderItems getOrderItems() {
 		return orderItems;
